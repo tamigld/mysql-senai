@@ -49,7 +49,6 @@ SELECT * FROM tb_usuario WHERE id = UUID_TO_BIN("d7984bc9-6ed0-11ee-9beb-b445067
 -- alterando tipo de usuário (base mesmo comando acima)
 UPDATE tb_usuario SET tipo_usuario = 1 WHERE id = UUID_TO_BIN("d5920e80-6ed0-11ee-9beb-b445067b7b53");
 
-SELECT BIN_TO_UUID(id), nome, tipo_usuario FROM tb_usuario;
 
 SELECT * FROM tb_usuario;
 
@@ -60,7 +59,8 @@ INSERT INTO tb_servico VALUES
 
 SELECT * FROM tb_servico;
 
--- listar tabelas com o id e nome
+-- listar tabelas com o id e nome facilmente
+SELECT BIN_TO_UUID(id), nome, tipo_usuario FROM tb_usuario;
 SELECT BIN_TO_UUID(id), nome FROM tb_tech;
 SELECT BIN_TO_UUID(id), titulo FROM tb_servico;
 
@@ -78,6 +78,26 @@ INSERT INTO tb_tech_servico VALUES (
 	UUID_TO_BIN("6f6fb2d7-6ed3-11ee-9beb-b445067b7b53"), UUID_TO_BIN("096be45b-6edf-11ee-9beb-b445067b7b53")
 );
 
-SELECT * FROM tb_tech_servico;
+SELECT * FROM tb_dev_tech;
+
+INSERT INTO tb_dev_tech VALUES (
+	UUID_TO_BIN("736d14d6-6ed3-11ee-9beb-b445067b7b53"), UUID_TO_BIN("d5920e80-6ed0-11ee-9beb-b445067b7b53")
+);
+
+SELECT * FROM tb_cotacao;
+
+INSERT INTO tb_cotacao VALUES (
+	UUID_TO_BIN(UUID()),
+    UUID_TO_BIN("d5920e80-6ed0-11ee-9beb-b445067b7b53"),
+    UUID_TO_BIN("096bde78-6edf-11ee-9beb-b445067b7b53"),
+    5000.00    
+);
+
+SELECT * FROM tb_cotacao;
+
+
+
+
+
 
 
