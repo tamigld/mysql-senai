@@ -21,7 +21,7 @@ CREATE TABLE tb_servico (
     proposta DECIMAL(10,2) NOT NULL,
     status_servico VARCHAR(255) NOT NULL,
     id_cliente BINARY(16) NOT NULL,
-    id_dev BINARY(16) NOT NULL,
+    id_dev BINARY(16),
     PRIMARY KEY(id),
     FOREIGN KEY(id_cliente) REFERENCES tb_usuario(id),
     FOREIGN KEY(id_dev) REFERENCES tb_usuario(id)
@@ -37,6 +37,7 @@ CREATE TABLE tb_cotacao(
     FOREIGN KEY(id_dev) REFERENCES tb_usuario(id),
     FOREIGN KEY(id_servico) REFERENCES tb_servico(id)
 );
+
 
 CREATE TABLE tb_tech(
 	id BINARY(16) NOT NULL,
